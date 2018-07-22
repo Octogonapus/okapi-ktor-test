@@ -15,16 +15,18 @@ plugins {
 }
 
 allprojects {
-    version = "0.0.0"
+    version = "0.0.2"
     group = "org.okapilib"
 }
 
 val javaUIProject = project(":JavaUI")
 val kernelProject = project(":Kernel")
+val kernelExampleProject = project(":KernelExample")
 
 val kotlinProjects = setOf(
         javaUIProject,
-        kernelProject
+        kernelProject,
+        kernelExampleProject
 )
 
 val javaProjects = setOf<Project>(

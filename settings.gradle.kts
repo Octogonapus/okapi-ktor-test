@@ -9,6 +9,7 @@ rootProject.name = "okapi-ktor-test"
 
 include(":JavaUI")
 include(":Kernel")
+include(":KernelExample")
 
 /**
  * This configures the gradle build so we can use non-standard build file names.
