@@ -313,8 +313,10 @@ configure(kotlinProjects.intersect(javafxProjects)) {
 }
 
 project(":Kernel") {
-    apply(plugin = "com.jfrog.bintray")
-    apply(plugin = "maven-publish")
+    apply {
+        plugin("com.jfrog.bintray")
+        plugin("maven-publish")
+    }
 
     val sourceJarTask = task<Jar>("sourceJar") {
         from(java.sourceSets["main"].allSource)
@@ -334,11 +336,23 @@ project(":Kernel") {
     }
 
     bintray {
-        user = properties["bintray.publish.user"].toString()
-        key = properties["bintray.publish.key"].toString()
+        user =
+                if (project.hasProperty("bintrayUser")) {
+                    project.property("bintrayUser") as String
+                } else {
+                    System.getenv("BINTRAY_USER")
+                }
+
+        key =
+                if (project.hasProperty("bintrayApiKey")) {
+                    project.property("bintrayApiKey") as String
+                } else {
+                    System.getenv("BINTRAY_API_KEY")
+                }
+
         setPublications(publicationName)
         with(pkg) {
-            repo = "maven-artifacts"
+            repo = "okapi-ktor-test"
             name = "okapi-ktor-test"
             publish = true
             setLicenses("Apache-2.0")
