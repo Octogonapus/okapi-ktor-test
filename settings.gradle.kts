@@ -8,7 +8,7 @@ buildCache {
 rootProject.name = "okapi-ktor-test"
 
 include(":JavaUI")
-include(":Kernel")
+include(":kernel")
 include(":KernelExample")
 
 /**

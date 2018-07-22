@@ -20,7 +20,7 @@ allprojects {
 }
 
 val javaUIProject = project(":JavaUI")
-val kernelProject = project(":Kernel")
+val kernelProject = project(":kernel")
 val kernelExampleProject = project(":KernelExample")
 
 val kotlinProjects = setOf(
@@ -314,7 +314,7 @@ configure(kotlinProjects.intersect(javafxProjects)) {
     }
 }
 
-project(":Kernel") {
+project(":kernel") {
     apply {
         plugin("com.jfrog.bintray")
         plugin("maven-publish")
@@ -354,7 +354,7 @@ project(":Kernel") {
 
         setPublications(publicationName)
         with(pkg) {
-            repo = "okapi-ktor-test"
+            repo = "maven-artifacts"
             name = "okapi-ktor-test"
             publish = true
             setLicenses("Apache-2.0")

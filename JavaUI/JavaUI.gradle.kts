@@ -8,5 +8,5 @@ application.mainClassName = "com.okapilib.testidk.javaui.server.MainKt"
 description = "A JavaFX UI for the kernel."
 
 dependencies {
-    implementation(project(":Kernel"))
+    implementation(project(":kernel"))
 }
