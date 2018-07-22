@@ -342,8 +342,8 @@ project(":Kernel") {
             name = "okapi-ktor-test"
             publish = true
             setLicenses("Apache-2.0")
-            vcsUrl = "https://github.com/nielsfalk/ktor-swagger.git"
-            githubRepo = "https://github.com/nielsfalk/ktor-swagger"
+            vcsUrl = "https://github.com/Octogonapus/okapi-ktor-test.git"
+            githubRepo = "https://github.com/Octogonapus/okapi-ktor-test"
         }
     }
 }
